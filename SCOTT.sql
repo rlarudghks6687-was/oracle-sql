@@ -1,28 +1,28 @@
--- Oracle(DBMS) - version(21C) -xe(databaseëª…)
--- user(scott) - í…Œì´ë¸”.
+-- Oracle(DBMS) - version(21C) -xe(database¸í)
+-- user(scott) - Å×ÀÌºí.
 -- Structured Query Language (SQL)
-SELECT studno, name -- ì¹¼ëŸ¼ëª…(ì „ì²´)
-FROM STUDENT; -- í…Œì´ë¸”.
+SELECT studno, name -- Ä®·³¸í(ÀüÃ¼)
+FROM STUDENT; -- Å×ÀÌºí.
 
--- 1. professor í…Œì´ë¸”. ì „ì²´ ì»¬ëŸ¼ ì¡°íšŒ.
+-- 1. professor Å×ÀÌºí. ÀüÃ¼ ÄÃ·³ Á¶È¸.
 SELECT *
 FROM student;
 
--- 2. student í…Œì´ë¸”. í•™ìƒë²ˆí˜¸, ì´ë¦„, í•™ë…„
+-- 2. student Å×ÀÌºí. ÇĞ»ı¹øÈ£, ÀÌ¸§, ÇĞ³â
 SELECT studno, name, grade
 FROM STUDENT;
 
---ìˆ™ì œì™„ë£Œí•¨.(ì—°ìŠµë¬¸ì œ 3)
-select name || 'ì˜ ì•„ì´ë””ëŠ” ' || id as "ì „ì²´ì„¤ëª…" -- ë³„ì¹­(alias) asëŠ” ìˆìœ¼ë‚˜ ì—†ìœ¼ë‚˜
-       ,grade "í•™ë…„"                           -- || ì—°ê²° ì—°ì‚°ì
+--¼÷Á¦¿Ï·áÇÔ.(¿¬½À¹®Á¦ 3)
+select name || 'ÀÇ ¾ÆÀÌµğ´Â ' || id as "ÀüÃ¼¼³¸í" -- º°Äª(alias) as´Â ÀÖÀ¸³ª ¾øÀ¸³ª
+       ,grade "ÇĞ³â"                           -- || ¿¬°á ¿¬»êÀÚ
 from student;
--- James Seoì˜ ì•„ì´ë””ëŠ” 75true ì´ê³  4í•™ë…„ ì…ë‹ˆë‹¤. -> alias (í•™ë…„ì„¤ëª…)
+-- James SeoÀÇ ¾ÆÀÌµğ´Â 75true ÀÌ°í 4ÇĞ³â ÀÔ´Ï´Ù. -> alias (ÇĞ³â¼³¸í)
 
-select name || 'ì˜ ''ì•„ì´ë””''ëŠ” ' || id || ' ì´ê³  ' || grade || 'í•™ë…„ì…ë‹ˆë‹¤.' 
-       as "í•™ë…„ì„¤ëª…" --ë³„ì¹­(alias)
+select name || 'ÀÇ ''¾ÆÀÌµğ''´Â ' || id || ' ÀÌ°í ' || grade || 'ÇĞ³âÀÔ´Ï´Ù.' 
+       as "ÇĞ³â¼³¸í" --º°Äª(alias)
 from student;
--- James seoì˜ 'ì•„ì´ë””'ëŠ” 75true ì´ê³  4í•™ë…„ì…ë‹ˆë‹¤.
-select  distinct name, grade --distinct : ì¤‘ë³µëœ ê°’ ì œê±° ë° ì¶œë ¥
+-- James seoÀÇ '¾ÆÀÌµğ'´Â 75true ÀÌ°í 4ÇĞ³âÀÔ´Ï´Ù.
+select  distinct name, grade --distinct : Áßº¹µÈ °ª Á¦°Å ¹× Ãâ·Â
 from student;
 
 select *
@@ -44,7 +44,7 @@ select *
 from student
 where deptno2 is not null;
 
---ë¹„êµì—°ì‚°ì ì—°ìŠµ1) empí…Œì´ë¸” ê¸‰ì—¬ 3000ë³´ë‹¤ í° ì§ì›
+--ºñ±³¿¬»êÀÚ ¿¬½À1) empÅ×ÀÌºí ±Ş¿© 3000º¸´Ù Å« Á÷¿ø
 select *
 from emp;
 
@@ -52,12 +52,12 @@ select *
 from emp
 where sal > 3000;
 
---ë¹„êµì—°ì‚°ì ì—°ìŠµ2) empí…Œì´ë¸” ë³´ë„ˆìŠ¤ ìˆëŠ” ì§ì›
+--ºñ±³¿¬»êÀÚ ¿¬½À2) empÅ×ÀÌºí º¸³Ê½º ÀÖ´Â Á÷¿ø
 select *
 from emp
 where comm is not null;
 
---ë¹„êµì—°ì‚°ì ì—°ìŠµ3) studentí…Œì´ë¸” ì£¼ì „ê³µí•™ê³¼: 101, 102, 103ì¸ í•™ìƒ.
+--ºñ±³¿¬»êÀÚ ¿¬½À3) studentÅ×ÀÌºí ÁÖÀü°øÇĞ°ú: 101, 102, 103ÀÎ ÇĞ»ı.
 SELECT *
 from student
 where deptno1 in (101, 102, 103);
@@ -72,9 +72,9 @@ select studno
 from student
 where (height> 170
 or   weight > 60)
-and (grade = 4 or height > 150); --ìš°ì„ ìˆœìœ„ andê°€ ì¡°ê¸ˆ ë” ë†’ìŒ
+and (grade = 4 or height > 150); --¿ì¼±¼øÀ§ and°¡ Á¶±İ ´õ ³ôÀ½
 
---ê¸‰ì—¬ê°€ 2000 ì´ìƒì¸ ì§ì›, ì»¤ë¯¸ì…˜(ê¸‰ì—¬ + ì»¤ë¯¸ì…˜)
+--±Ş¿©°¡ 2000 ÀÌ»óÀÎ Á÷¿ø, Ä¿¹Ì¼Ç(±Ş¿© + Ä¿¹Ì¼Ç)
 select ename
       ,sal
       ,comm
@@ -82,7 +82,7 @@ from emp
 where (sal + comm) >= 2000
 or sal >= 2000;
 
---êµìˆ˜ -> ì—°ë´‰ì´ 4000 ì´ìƒì¸ êµìˆ˜ë“¤, (pay * 12) + (bonus * 3)
+--±³¼ö -> ¿¬ºÀÀÌ 4000 ÀÌ»óÀÎ ±³¼öµé, (pay * 12) + (bonus * 3)
 select profno
       ,name
       ,pay
@@ -92,9 +92,9 @@ select profno
 from professor
 where (pay * 12 >= 3000 and bonus is null)
 or (pay * 12 + bonus * 3 >= 3000 and bonus is not null)
-order by 5; --order by(ì •ë ¬ê¸°ì¤€). colìˆœë²ˆìœ¼ë¡œë„ ê°€ëŠ¥
+order by 5; --order by(Á¤·Ä±âÁØ). col¼ø¹øÀ¸·Îµµ °¡´É
 
---ë¬¸ìì—´ likeì—°ì‚°ì
+--¹®ÀÚ¿­ like¿¬»êÀÚ
 select *
 from student
 where name like '%on____%';
@@ -109,19 +109,19 @@ from professor
 where hiredate > to_date('1999-01-01', 'rrrr-mm-dd')
 order by hiredate; --1970.01.01
 
---í•™ìƒí…Œì´ë¸”, ì „í™”ë²ˆí˜¸(02, 03, 051, 052, 053..)
---ë¶€ì‚°ê±°ì£¼,(051)
+--ÇĞ»ıÅ×ÀÌºí, ÀüÈ­¹øÈ£(02, 03, 051, 052, 053..)
+--ºÎ»ê°ÅÁÖ,(051)
 select name
       ,tel
 from student
 where tel like '051%';
 
---ì´ë¦„ Mìœ¼ë¡œ ì‹œì‘í•˜ë©´ì„œ 8ê°œ ì´ìƒì¸ ì‚¬ëŒë§Œ ì¡°íšŒ
+--ÀÌ¸§ MÀ¸·Î ½ÃÀÛÇÏ¸é¼­ 8°³ ÀÌ»óÀÎ »ç¶÷¸¸ Á¶È¸
 select name
 from student
 where name like '%M________%';
 
---ì£¼ë¯¼ë²ˆí˜¸ 10ì›”ë‹¬ì— íƒœì–´ë‚œ ì‚¬ëŒì¡°íšŒ
+--ÁÖ¹Î¹øÈ£ 10¿ù´Ş¿¡ ÅÂ¾î³­ »ç¶÷Á¶È¸
 select name
       ,jumin
       ,birthday
