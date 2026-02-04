@@ -1,28 +1,28 @@
--- Oracle(DBMS) - version(21C) -xe(database¸í)
--- user(scott) - Å×ÀÌºí.
+-- Oracle(DBMS) - version(21C) -xe(databaseëª…)
+-- user(scott) - í…Œì´ë¸”.
 -- Structured Query Language (SQL)
-SELECT studno, name -- Ä®·³¸í(ÀüÃ¼)
-FROM STUDENT; -- Å×ÀÌºí.
+SELECT studno, name -- ì¹¼ëŸ¼ëª…(ì „ì²´)
+FROM STUDENT; -- í…Œì´ë¸”.
 
--- 1. professor Å×ÀÌºí. ÀüÃ¼ ÄÃ·³ Á¶È¸.
+-- 1. professor í…Œì´ë¸”. ì „ì²´ ì»¬ëŸ¼ ì¡°íšŒ.
 SELECT *
 FROM student;
 
--- 2. student Å×ÀÌºí. ÇÐ»ý¹øÈ£, ÀÌ¸§, ÇÐ³â
+-- 2. student í…Œì´ë¸”. í•™ìƒë²ˆí˜¸, ì´ë¦„, í•™ë…„
 SELECT studno, name, grade
 FROM STUDENT;
 
---¼÷Á¦¿Ï·áÇÔ.(¿¬½À¹®Á¦ 3)
-select name || 'ÀÇ ¾ÆÀÌµð´Â ' || id as "ÀüÃ¼¼³¸í" -- º°Äª(alias) as´Â ÀÖÀ¸³ª ¾øÀ¸³ª
-       ,grade "ÇÐ³â"                           -- || ¿¬°á ¿¬»êÀÚ
+--ìˆ™ì œì™„ë£Œí•¨.(ì—°ìŠµë¬¸ì œ 3)
+select name || 'ì˜ ì•„ì´ë””ëŠ” ' || id as "ì „ì²´ì„¤ëª…" -- ë³„ì¹­(alias) asëŠ” ìžˆìœ¼ë‚˜ ì—†ìœ¼ë‚˜
+       ,grade "í•™ë…„"                           -- || ì—°ê²° ì—°ì‚°ìž
 from student;
--- James SeoÀÇ ¾ÆÀÌµð´Â 75true ÀÌ°í 4ÇÐ³â ÀÔ´Ï´Ù. -> alias (ÇÐ³â¼³¸í)
+-- James Seoì˜ ì•„ì´ë””ëŠ” 75true ì´ê³  4í•™ë…„ ìž…ë‹ˆë‹¤. -> alias (í•™ë…„ì„¤ëª…)
 
-select name || 'ÀÇ ''¾ÆÀÌµð''´Â ' || id || ' ÀÌ°í ' || grade || 'ÇÐ³âÀÔ´Ï´Ù.' 
-       as "ÇÐ³â¼³¸í" --º°Äª(alias)
+select name || 'ï¿½ï¿½ ''ï¿½ï¿½ï¿½Ìµï¿½''ï¿½ï¿½ ' || id || ' ï¿½Ì°ï¿½ ' || grade || 'ï¿½Ð³ï¿½ï¿½Ô´Ï´ï¿½.' 
+       as "ï¿½Ð³â¼³ï¿½ï¿½" --ï¿½ï¿½Äª(alias)
 from student;
--- James seoÀÇ '¾ÆÀÌµð'´Â 75true ÀÌ°í 4ÇÐ³âÀÔ´Ï´Ù.
-select  distinct name, grade --distinct : Áßº¹µÈ °ª Á¦°Å ¹× Ãâ·Â
+-- James seoï¿½ï¿½ 'ï¿½ï¿½ï¿½Ìµï¿½'ï¿½ï¿½ 75true ï¿½Ì°ï¿½ 4ï¿½Ð³ï¿½ï¿½Ô´Ï´ï¿½.
+select  distinct name, grade --distinct : ï¿½ßºï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 from student;
 
 select *
@@ -44,7 +44,7 @@ select *
 from student
 where deptno2 is not null;
 
---ºñ±³¿¬»êÀÚ ¿¬½À1) empÅ×ÀÌºí ±Þ¿© 3000º¸´Ù Å« Á÷¿ø
+--ï¿½ñ±³¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½1) empï¿½ï¿½ï¿½Ìºï¿½ ï¿½Þ¿ï¿½ 3000ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½
 select *
 from emp;
 
@@ -52,12 +52,12 @@ select *
 from emp
 where sal > 3000;
 
---ºñ±³¿¬»êÀÚ ¿¬½À2) empÅ×ÀÌºí º¸³Ê½º ÀÖ´Â Á÷¿ø
+--ï¿½ñ±³¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½2) empï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½Ê½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½
 select *
 from emp
 where comm is not null;
 
---ºñ±³¿¬»êÀÚ ¿¬½À3) studentÅ×ÀÌºí ÁÖÀü°øÇÐ°ú: 101, 102, 103ÀÎ ÇÐ»ý.
+--ï¿½ñ±³¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½3) studentï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½: 101, 102, 103ï¿½ï¿½ ï¿½Ð»ï¿½.
 SELECT *
 from student
 where deptno1 in (101, 102, 103);
@@ -72,9 +72,9 @@ select studno
 from student
 where (height> 170
 or   weight > 60)
-and (grade = 4 or height > 150); --¿ì¼±¼øÀ§ and°¡ Á¶±Ý ´õ ³ôÀ½
+and (grade = 4 or height > 150); --ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ andï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
---±Þ¿©°¡ 2000 ÀÌ»óÀÎ Á÷¿ø, Ä¿¹Ì¼Ç(±Þ¿© + Ä¿¹Ì¼Ç)
+--ï¿½Þ¿ï¿½ï¿½ï¿½ 2000 ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, Ä¿ï¿½Ì¼ï¿½(ï¿½Þ¿ï¿½ + Ä¿ï¿½Ì¼ï¿½)
 select ename
       ,sal
       ,comm
@@ -82,7 +82,7 @@ from emp
 where (sal + comm) >= 2000
 or sal >= 2000;
 
---±³¼ö -> ¿¬ºÀÀÌ 4000 ÀÌ»óÀÎ ±³¼öµé, (pay * 12) + (bonus * 3)
+--ï¿½ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 4000 ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, (pay * 12) + (bonus * 3)
 select profno
       ,name
       ,pay
@@ -92,9 +92,9 @@ select profno
 from professor
 where (pay * 12 >= 3000 and bonus is null)
 or (pay * 12 + bonus * 3 >= 3000 and bonus is not null)
-order by 5; --order by(Á¤·Ä±âÁØ). col¼ø¹øÀ¸·Îµµ °¡´É
+order by 5; --order by(ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½). colï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½
 
---¹®ÀÚ¿­ like¿¬»êÀÚ
+--ï¿½ï¿½ï¿½Ú¿ï¿½ likeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 select *
 from student
 where name like '%on____%';
@@ -109,19 +109,19 @@ from professor
 where hiredate > to_date('1999-01-01', 'rrrr-mm-dd')
 order by hiredate; --1970.01.01
 
---ÇÐ»ýÅ×ÀÌºí, ÀüÈ­¹øÈ£(02, 03, 051, 052, 053..)
---ºÎ»ê°ÅÁÖ,(051)
+--ï¿½Ð»ï¿½ï¿½ï¿½ï¿½Ìºï¿½, ï¿½ï¿½È­ï¿½ï¿½È£(02, 03, 051, 052, 053..)
+--ï¿½Î»ï¿½ï¿½ï¿½ï¿½,(051)
 select name
       ,tel
 from student
 where tel like '051%';
 
---ÀÌ¸§ MÀ¸·Î ½ÃÀÛÇÏ¸é¼­ 8°³ ÀÌ»óÀÎ »ç¶÷¸¸ Á¶È¸
+--ï¿½Ì¸ï¿½ Mï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸é¼­ 8ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 select name
 from student
 where name like '%M________%';
 
---ÁÖ¹Î¹øÈ£ 10¿ù´Þ¿¡ ÅÂ¾î³­ »ç¶÷Á¶È¸
+--ï¿½Ö¹Î¹ï¿½È£ 10ï¿½ï¿½ï¿½Þ¿ï¿½ ï¿½Â¾î³­ ï¿½ï¿½ï¿½ï¿½ï¿½È¸
 select name
       ,jumin
       ,birthday
