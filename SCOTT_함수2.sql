@@ -131,6 +131,7 @@ create table board (
 --컬럼 추가, 변경
 alter table board add (click_cnt number);
 alter table board modify content varchar2(1000);
+alter table board modify click_cnt number default 0;
 
 desc board;
 
